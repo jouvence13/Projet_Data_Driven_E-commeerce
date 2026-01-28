@@ -14,8 +14,9 @@ Le dashboard propose une exploration interactive et visuelle des données.
 
 # Démo en ligne
 
-Application Streamlit : (ajouter l’URL après déploiement)
-Dépôt GitHub : https://github.com/jouvence13/Projet_Data_Driven_E-commeerce
+- Application Streamlit : (ajouter l’URL après déploiement)
+
+- Dépôt GitHub : https://github.com/jouvence13/Projet_Data_Driven_E-commeerce
 
 
 # Données
