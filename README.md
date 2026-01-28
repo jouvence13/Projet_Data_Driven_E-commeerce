@@ -63,16 +63,5 @@ Bibliothèques & Frameworks:
 
 # Structure du projet
 
-Projet_Data_Driven_E-commerce/
-│
-├── code/
-│   └── app.py                 # Application Streamlit
-│
-├── data/
-│   └── clean/                 # Données (chargées en ligne)
-│
-├── notebooks/
-│   └── data_traitement.ipynb       # Prétraitement & exploration
-│
-├── requirements.txt           # Dépendances Python
-└── README.md
+<img width="1082" height="390" alt="image" src="https://github.com/user-attachments/assets/234de84e-a849-4eee-a1fc-361c1ba1e4af" />
+
