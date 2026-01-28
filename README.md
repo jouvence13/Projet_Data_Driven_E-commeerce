@@ -42,3 +42,21 @@ En raison de la taille du fichier, le dataset est hébergé en ligne et chargé 
 - Chargement optimisé des données avec cache
 - Architecture claire et déployable
 
+# Langages & Technologies
+
+Langages:
+  - Python
+
+Bibliothèques & Frameworks:
+  - Streamlit – Interface web interactive
+  - Pandas – Manipulation et analyse de données
+  - NumPy – Calcul numérique    
+  - Plotly – Visualisations interactives
+  - Matplotlib – Graphiques statistiques
+  - Scikit-learn – Préparation et analyse des données
+
+# Outils
+
+  - Git / GitHub – Versionnement
+  - Streamlit Community Cloud – Déploiement
+  - Jupyter Notebook – Exploration et traitement des données
