@@ -11,3 +11,22 @@ L’objectif est de fournir des indicateurs clés pour aider à la prise de déc
 - l’évolution de l’activité dans le temps.
 
 Le dashboard propose une exploration interactive et visuelle des données.
+
+# Démo en ligne
+
+Application Streamlit : (ajouter l’URL après déploiement)
+Dépôt GitHub : https://github.com/jouvence13/Projet_Data_Driven_E-commeerce
+
+
+# Données
+
+Type : Données d’événements e-commerce
+Format : CSV
+Taille : ~192 MB
+Contenu :
+Identifiants utilisateurs
+Types d’événements
+Dates et heures (timestamps)
+Informations de cohortes
+
+En raison de la taille du fichier, le dataset est hébergé en ligne et chargé dynamiquement dans l’application
