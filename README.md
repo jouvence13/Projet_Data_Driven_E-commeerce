@@ -31,3 +31,14 @@ Le dashboard propose une exploration interactive et visuelle des données.
 - Informations de cohortes
 
 En raison de la taille du fichier, le dataset est hébergé en ligne et chargé dynamiquement dans l’application
+
+# Fonctionnalités
+
+- Dashboard interactif avec Streamlit
+- Analyse de cohortes (rétention utilisateurs)
+- Visualisation des taux de rétention
+- Analyse temporelle des événements
+- Graphiques interactifs (Plotly)
+- Chargement optimisé des données avec cache
+- Architecture claire et déployable
+
