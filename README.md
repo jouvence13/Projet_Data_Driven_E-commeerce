@@ -60,3 +60,19 @@ Bibliothèques & Frameworks:
   - Git / GitHub – Versionnement
   - Streamlit Community Cloud – Déploiement
   - Jupyter Notebook – Exploration et traitement des données
+
+# Structure du projet
+
+Projet_Data_Driven_E-commerce/
+│
+├── code/
+│   └── app.py                 # Application Streamlit
+│
+├── data/
+│   └── clean/                 # Données (chargées en ligne)
+│
+├── notebooks/
+│   └── data_traitement.ipynb       # Prétraitement & exploration
+│
+├── requirements.txt           # Dépendances Python
+└── README.md
