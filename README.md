@@ -20,13 +20,13 @@ Dépôt GitHub : https://github.com/jouvence13/Projet_Data_Driven_E-commeerce
 
 # Données
 
-Type : Données d’événements e-commerce
-Format : CSV
-Taille : ~192 MB
-Contenu :
-Identifiants utilisateurs
-Types d’événements
-Dates et heures (timestamps)
-Informations de cohortes
+- Type : Données d’événements e-commerce
+- Format : CSV
+- Taille : ~192 MB
+- Contenu :
+- Identifiants utilisateurs
+- Types d’événements
+- Dates et heures (timestamps)
+- Informations de cohortes
 
 En raison de la taille du fichier, le dataset est hébergé en ligne et chargé dynamiquement dans l’application
