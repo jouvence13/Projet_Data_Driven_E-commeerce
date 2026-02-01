@@ -50,7 +50,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4) Lancer l’application Streamlit
+### 4) Placer les données
+
+Le fichier attendu doit être ici : `data/clean/events_clean.csv`.
+
+> Si vous ne l’avez pas, copiez votre CSV nettoyé dans `data/clean/`.
+
+### 5) Lancer l’application Streamlit
 
 ```bash
 streamlit run code/app.py
