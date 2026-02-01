@@ -1,289 +1,153 @@
-# Dashboard Data-Driven – Analyse E-commerce
+# Dashboard Data‑Driven – Analyse E‑commerce
 
-Un dashboard interactif et performant pour analyser le comportement des utilisateurs e-commerce.
+Dashboard interactif en Python (Streamlit) pour analyser le comportement utilisateur sur une plateforme e‑commerce.
 
 ---
 
-## Vue d'ensemble
+## Objectif
 
-Ce projet est un **dashboard d'analyse data-driven** développé en Python avec **Streamlit**, permettant d'explorer et d'analyser le comportement des utilisateurs sur une plateforme e-commerce à partir de millions d'événements.
+Explorer des millions d’événements e‑commerce et produire :
+- des KPIs (conversion, activité, engagement) ;
+- des analyses de cohortes et de rétention ;
+- des tendances temporelles ;
+- des visualisations interactives.
 
-Le dashboard fournit des **indicateurs clés (KPIs)** et des **visualisations interactives** pour soutenir la prise de décision stratégique :
+---
 
-- **Engagement des utilisateurs** – Taux de conversion, événements par utilisateur
-- **Rétention client** – Analyse de cohortes et taux de rétention
-- **Tendances temporelles** – Évolution de l'activité par jour/heure
-- **Tests A/B** – Comparaison de variantes et performance
-- **Interface intuitive** – Exploration interactive et filtrage en temps réel  
+## Prérequis
+
+- Python 3.9+ (recommandé 3.10)
+- Git
 
 ---
 
 ## Démarrage rapide
 
-### Prérequis
-- Python 3.9+
-- Git
-
-### Installation
-
-**1. Cloner le dépôt**
+### 1) Cloner le dépôt
 
 ```bash
 git clone https://github.com/jouvence13/Projet_Data_Driven_E-commeerce.git
 cd Projet_Data_Driven_E-commeerce
 ```
 
-**2. Créer et activer un environnement virtuel**
+### 2) Créer et activer un environnement virtuel
 
+**Windows (PowerShell)**
 ```bash
-# macOS / Linux
 python -m venv venv
-source venv/bin/activate
-
-# Windows
-python -m venv venv
-venv\Scripts\activate
+venv\Scripts\Activate.ps1
 ```
 
-**3. Installer les dépendances**
+**macOS / Linux**
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+### 3) Installer les dépendances
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Lancer le dashboard**
+### 4) Lancer l’application Streamlit
 
 ```bash
 streamlit run code/app.py
 ```
 
-L'application ouvrira automatiquement sur `http://localhost:8501`
+L’app s’ouvre sur http://localhost:8501
 
 ---
 
 ## Données
 
-| Propriété | Détails |
-|-----------|---------|
-| **Type** | Événements e-commerce (views, addtocart, transactions) |
-| **Format** | CSV |
-| **Taille** | ~192 MB |
-| **Colonnes** | event_id, user_id, event, timestamp, cohort, et autres |
-| **Localisation** | `data/clean/events_clean.csv` |
+Le dashboard utilise un fichier nettoyé :
 
-> **Note** : Le dataset est chargé dynamiquement avec mise en cache Streamlit pour optimiser les performances.
+- Chemin attendu : `data/clean/events_clean.csv`
+- Taille ~ 192 MB
+
+> Si vous clonez le projet sans les données, placez le fichier CSV nettoyé à cet emplacement.
 
 ---
 
-## Fonctionnalités principales
-
-### Overview / KPIs
-- Nombre total d'utilisateurs et événements
-- Taux de conversion global
-- Événements par utilisateur (moyenne)
-- Indicateurs clés en temps réel
-
-### Analyse de Cohortes
-- Création de cohortes par date de premier événement
-- Matrice de rétention (semaines/jours)
-- Visualisation heatmap des taux de rétention
-- Suivi de la fidélité utilisateur
-
-### Analyse Temporelle
-- Tendances journalières et horaires
-- Répartition des événements par type
-- Distribution par jour de la semaine
-- Graphiques interactifs Plotly
-
-### Tests A/B (optionnel)
-- Comparaison de variantes
-- Statistiques significatives
-- Courbes de conversion
-
-### Design & UX
-- Interface épurée (noir/blanc)
-- Responsive et rapide
-- KPI cards avec styling moderne
-- Tabs et filtres interactifs
-
----
-
-## Stack Technologique
-
-### Langages
-- **Python 3.9+**
-
-### Bibliothèques & Frameworks
-
-| Catégorie | Outils |
-|-----------|--------|
-| **Web** | [Streamlit](https://streamlit.io/) – Interface interactive |
-| **Data** | [Pandas](https://pandas.pydata.org/) – Manipulation de données |
-| **Calcul** | [NumPy](https://numpy.org/) – Opérations numériques |
-| **Visualisation** | [Plotly](https://plotly.com/) – Graphiques interactifs |
-| | [Matplotlib](https://matplotlib.org/) – Visualisations statistiques |
-| | [Seaborn](https://seaborn.pydata.org/) – Graphiques avancés |
-| **ML** | [Scikit-learn](https://scikit-learn.org/) – Modélisation |
-
-### Outils
-- **Git / GitHub** – Versionnement du code
-- **Jupyter Notebook** – Exploration et prototypage
-- **Streamlit Community Cloud** – Déploiement
-- **MongoDB** (optionnel) – Stockage des données
-
----
-
-## Structure du projet
+## Structure du projet (résumé)
 
 ```
 Projet_Data_Driven_E-commeerce/
-├── code/
-│   └── app.py                          # Application Streamlit principale
+├── code/                       # Application Streamlit
+│   ├── app.py
+│   ├── kpis.py
+│   ├── cohorts.py
+│   ├── insights.py
+│   └── utils.py
 ├── data/
-│   ├── raw/                            # Données brutes
-│   │   ├── events.csv
-│   │   ├── category_tree.csv
-│   │   └── item_properties_part*.csv
-│   └── clean/
-│       └── events_clean.csv            # Données nettoyées (~192 MB)
-├── Notebook/
-│   ├── data_traitement.ipynb           # Exploration & nettoyage
-│   └── data/                           # Données de travail
-├── data_collection/
-│   └── insertion_versmongo.py          # Scripts MongoDB
-├── src/
-│   └── test_mongo.py                   # Tests
-├── config/                             # Configuration
-├── data_viz/                           # Scripts de visualisation
-├── docs/                               # Documentation
-├── requirements.txt                    # Dépendances Python
-├── README.md                           # Ce fichier
-└── .env                                # Variables d'environnement
+│   ├── row/                     # Données brutes (source)
+│   └── clean/                   # Données nettoyées
+├── Notebook/                    # EDA et exploration
+├── data_collection/             # Scripts MongoDB (optionnel)
+├── data_viz/                    # Scripts de visualisation
+├── docs/                        # Documentation
+├── requirements.txt
+└── README.md
 ```
+
+---
+
+## Fonctionnalités
+
+- **KPIs** : conversion, événements par utilisateur, activité globale
+- **Cohortes** : matrice de rétention, heatmap
+- **Analyse temporelle** : tendances jour/heure, distributions
+- **A/B tests** : comparaison de variantes (optionnel)
 
 ---
 
 ## Configuration
 
-Les paramètres principaux se trouvent dans `code/app.py` :
+Les chemins et paramètres sont centralisés dans le code :
 
-```python
-# Chemin des données
-EVENTS_CLEAN_PATH = PROJECT_ROOT / "data" / "clean" / "events_clean.csv"
-
-# Configuration Streamlit
-st.set_page_config(
-    page_title="E-Commerce Dashboard",
-    page_icon="📊",
-    layout="wide"
-)
-```
+- Chemin dataset : `data/clean/events_clean.csv`
+- Page Streamlit : configurée dans `code/app.py`
 
 ---
 
-## Utilisation
+## Dépannage rapide
 
-### Pages principales
+### Le fichier CSV n’est pas trouvé
+- Vérifier la présence de `data/clean/events_clean.csv`
+- Vérifier l’orthographe des dossiers : `clean` et `row`
 
-1. **Overview** – Vue d'ensemble des KPIs et tendances
-2. **Cohortes** – Analyse de rétention par cohorte
-3. **Analyse Temporelle** – Évolution jour/heure
-4. **Tests A/B** – Comparaison de variantes
+### Erreur de mémoire
+- Utiliser le cache Streamlit (déjà prévu dans le code)
+- Réduire la plage temporelle de filtrage
 
-### Filtres disponibles
-- Sélection de période (date range)
-- Filtrage par cohort
-- Filtrage par type d'événement
-- Sélection de variante (A/B)
-
----
-
-## Déploiement
-
-### Sur Streamlit Cloud
-1. Pousser le code sur GitHub
-2. Se connecter à [Streamlit Cloud](https://streamlit.io/cloud)
-3. Créer une nouvelle app en pointant vers ce dépôt
-4. L'URL sera : `https://<username>-<appname>.streamlit.app`
-
-### Sur un serveur personnel
-```bash
-# Installation de Streamlit sur le serveur
-pip install streamlit
-
-# Lancer avec Gunicorn (optionnel)
-gunicorn --bind 0.0.0.0:8501 streamlit run code/app.py
-```
-
----
-
-## Améliorations futures
-
-- [ ] Export des rapports (PDF/Excel)
-- [ ] Prédictions et forecasting
-- [ ] API REST pour l'intégration
-- [ ] Dashboard mobile responsive
-- [ ] Alertes automatiques sur les anomalies
-- [ ] Multi-langue support
-- [ ] Authentification utilisateurs
-
----
-
-## Troubleshooting
-
-### Les données ne se chargent pas
-```bash
-# Vérifier que le fichier existe
-ls -la data/clean/events_clean.csv
-
-# Vérifier les permissions
-chmod 644 data/clean/events_clean.csv
-```
-
-### Erreurs de mémoire avec le dataset
-- Utiliser le cache Streamlit (`@st.cache_data`)
-- Réduire la portée temporelle des analyses
-- Charger les données par chunks
-
-### Port 8501 déjà utilisé
+### Port déjà utilisé
 ```bash
 streamlit run code/app.py --server.port 8502
 ```
 
 ---
 
-## Documentation additionnelle
+## Déploiement (optionnel)
 
-- [Documentation Streamlit](https://docs.streamlit.io/)
-- [Guide Pandas](https://pandas.pydata.org/docs/)
-- [Plotly Charts](https://plotly.com/python/)
+### Streamlit Cloud
+1. Pousser le dépôt sur GitHub
+2. Créer une app sur https://streamlit.io/cloud
+3. Pointer sur `code/app.py`
+
+---
+
+## Contribuer
+
+1. Fork du dépôt
+2. Nouvelle branche : `git checkout -b feature/ma-feature`
+3. Commit : `git commit -m "Add feature"`
+4. Push : `git push origin feature/ma-feature`
+5. Pull Request
 
 ---
 
 ## Auteur
 
-- **Jouvence13** – [GitHub Profile](https://github.com/jouvence13)
-
----
-
-## License
-
-Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-## Contribution
-
-Les contributions sont bienvenues ! 
-
-1. Forker le dépôt
-2. Créer une branche (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
-4. Push la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
-
----
-
----
-
-Made by [Jouvence13](https://github.com/jouvence13)
+Jouvence13 — https://github.com/jouvence13
